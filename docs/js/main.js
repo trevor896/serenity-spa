@@ -255,6 +255,13 @@ const bookingPrice = document.querySelector("#booking-price");
 const bookingPriceCaption = document.querySelector("#booking-price-caption");
 const maximumBookingPrice = Math.max(...bookingServices.map((service) => Number(service.dataset.price)));
 let selectedBookingService = bookingServices.find((service) => service.classList.contains("is-selected"));
+const bookingSection = document.querySelector(".booking");
+const bookingOpenButton = document.querySelector("#booking-open");
+const bookingDialog = document.querySelector("#booking-dialog");
+const bookingForm = document.querySelector("#booking-form");
+const bookingName = document.querySelector("#booking-name");
+const bookingDate = document.querySelector("#booking-date");
+const bookingCloseButton = document.querySelector(".booking__dialog-close");
 
 function showBookingPrice(service) {
   const price = Number(service.dataset.price);
@@ -285,6 +292,74 @@ bookingServices.forEach((service) => {
 });
 
 showBookingPrice(selectedBookingService);
+
+function closeBookingDialog() {
+  bookingDialog.hidden = true;
+  bookingOpenButton.focus();
+}
+
+bookingDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 60_000)
+  .toISOString()
+  .slice(0, 10);
+
+bookingOpenButton.addEventListener("click", () => {
+  bookingDialog.hidden = false;
+  bookingName.focus();
+});
+
+bookingCloseButton.addEventListener("click", closeBookingDialog);
+
+bookingDialog.addEventListener("click", (event) => {
+  if (event.target === bookingDialog) closeBookingDialog();
+});
+
+bookingDialog.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeBookingDialog();
+    return;
+  }
+
+  if (event.key !== "Tab") return;
+
+  const focusableElements = [...bookingDialog.querySelectorAll("button, input")];
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+});
+
+bookingForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!bookingForm.reportValidity()) return;
+
+  const formData = new FormData(bookingForm);
+  const appointmentDate = new Date(`${formData.get("date")}T12:00:00`);
+  const formattedDate = new Intl.DateTimeFormat("en-BW", {
+    dateStyle: "long",
+  }).format(appointmentDate);
+  const serviceName = selectedBookingService.querySelector("strong").textContent.trim();
+  const price = Number(selectedBookingService.dataset.price).toLocaleString("en-BW");
+  const message = [
+    "Hello, I’d like to request an appointment.",
+    "",
+    `Full name: ${formData.get("name").toString().trim()}`,
+    `Phone number: ${formData.get("phone").toString().trim()}`,
+    `Service: ${serviceName}`,
+    `Estimated price: P${price}`,
+    `Date: ${formattedDate}`,
+    `Start time: ${formData.get("time")}`,
+  ].join("\n");
+  const whatsappNumber = bookingSection.dataset.whatsappNumber;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.location.assign(whatsappUrl);
+});
 
 const workVideos = [...document.querySelectorAll(".work-carousel__video")];
 const workTitles = ["A moment to unwind", "Make room to breathe", "Care that reaches deeper"];
