@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#35190f">
+    <meta name="description" content="Serenity Spa — thoughtful massage and body care.">
+    <title>Serenity Spa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home">Serenity Spa</a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#tools">Tools</a>
+        <a href="#our-work">Our work</a>
+        <a href="#about">About</a>
+        <a class="booking-link" href="#contact">Book Appointment</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="hero__eyebrow">A moment just for you</p>
+          <h1 id="hero-title">One-on-One Body Care,<br class="hero__desktop-break"> in a Private Room</h1>
+          <p class="hero__caption">Your body deserves thoughtful care and a moment to release the tension of the day.</p>
+          <div class="hero__actions">
+            <a class="pill-button pill-button--light" href="#contact">Book Now</a>
+            <a class="pill-button pill-button--outline" href="#benefits">See Benefits</a>
+          </div>
+          <div class="hero__stats" aria-label="Spa highlights">
+            <div class="stat-card">
+              <span class="stat-card__index" aria-hidden="true">01</span>
+              <strong>Thoughtful care</strong>
+              <span>Personalized to you</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__index" aria-hidden="true">02</span>
+              <strong>Private space</strong>
+              <span>Time to slow down</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+        <div class="benefits__content">
+          <p class="benefits__eyebrow">Let us handle the ache</p>
+          <h2 id="benefits-title">Point to it</h2>
+          <p class="benefits__description">Explore how thoughtful massage may help ease everyday tension.</p>
+        </div>
+
+        <div class="benefits__points" role="group" aria-label="Explore massage points">
+          <button class="benefits__point" type="button"
+            data-title="Neck"
+            data-benefits="Gentle massage may help ease feelings of everyday neck tension.|Relaxation-focused touch can make it easier to unwind.|A therapist can tailor pressure to your comfort."
+            aria-label="Explore benefits for the neck" aria-pressed="false">
+            <span class="benefits__point-line" aria-hidden="true"></span>
+            <span class="benefits__point-name" aria-hidden="true">Neck</span>
+          </button>
+          <button class="benefits__point" type="button"
+            data-title="Shoulder blade"
+            data-benefits="Massage around the shoulder blades may ease feelings of tightness.|Slow, considered pressure can support relaxation.|Your therapist can adjust the session to your preferences."
+            aria-label="Explore benefits around the shoulder blade" aria-pressed="false">
+            <span class="benefits__point-line" aria-hidden="true"></span>
+            <span class="benefits__point-name" aria-hidden="true">Shoulder blade</span>
+          </button>
+          <button class="benefits__point" type="button"
+            data-title="Back"
+            data-benefits="A back massage may help ease feelings of muscle tension.|Steady, comfortable pressure can encourage a moment of calm.|Treatment can be adapted to areas that feel tight or tired."
+            aria-label="Explore benefits for the back" aria-pressed="false">
+            <span class="benefits__point-line" aria-hidden="true"></span>
+            <span class="benefits__point-name" aria-hidden="true">Back</span>
+          </button>
+          <button class="benefits__point" type="button"
+            data-title="Knee area"
+            data-benefits="Gentle work on the surrounding muscles may ease feelings of tightness.|A therapist can adapt the session to your comfort and avoid direct pressure on the knee joint.|Tell your therapist about any pain or injury before treatment."
+            aria-label="Explore benefits around the knee" aria-pressed="false">
+            <span class="benefits__point-line" aria-hidden="true"></span>
+            <span class="benefits__point-name" aria-hidden="true">Knee area</span>
+          </button>
+          <button class="benefits__point" type="button"
+            data-title="Feet"
+            data-benefits="A foot massage may soothe feet that feel tired after a long day.|Comfortable touch can make a relaxing end-of-day ritual.|Pressure can be adjusted to suit your preferences."
+            aria-label="Explore benefits for the feet" aria-pressed="false">
+            <span class="benefits__point-line" aria-hidden="true"></span>
+            <span class="benefits__point-name" aria-hidden="true">Feet</span>
+          </button>
+        </div>
+
+        <aside class="benefits__panel" aria-label="Massage point benefits" aria-live="polite" aria-atomic="true" aria-hidden="true">
+          <p class="benefits__panel-eyebrow">A little more relief</p>
+          <h3 class="benefits__panel-title" id="benefits-point-title">Choose a point</h3>
+          <p class="benefits__panel-prompt" id="benefits-point-prompt">Hover over or select a marker to explore possible benefits.</p>
+          <ul class="benefits__panel-list" id="benefits-point-list" hidden></ul>
+          <p class="benefits__panel-note">Benefits vary. Massage is not a substitute for medical care.</p>
+        </aside>
+      </section>
+
+      <section class="tools" id="tools" aria-labelledby="tools-title">
+        <div class="tools__heading">
+          <p class="tools__eyebrow">Thoughtfully chosen</p>
+          <h2 id="tools-title">Our tools</h2>
+        </div>
+        <div class="tools__scene">
+          <div class="tools__image-wrap">
+            <img class="tools__image" src="assets/imgs/tools-bg.jpg" alt="Massage tools arranged on a wooden table, including a massage stick, heated stone warmer, stones, towels, massage oil, and a jade roller" loading="lazy">
+            <button class="tools__hotspot" type="button" data-tool-title="Wooden massage tool" data-tool-description="A shaped wooden tool can be used by a therapist for controlled, gliding pressure during a massage." aria-label="Learn about the wooden massage tool" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Stone warmer" data-tool-description="A warmer keeps massage stones at a comfortable, therapist-checked temperature before use." aria-label="Learn about the stone warmer" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Massage stones" data-tool-description="Smooth stones may be incorporated into a massage for a soothing sense of warmth and pressure." aria-label="Learn about the massage stones" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Warm towels" data-tool-description="Soft, warmed towels add a comfortable finishing touch to a relaxing treatment." aria-label="Learn about the warm towels" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Smooth stones" data-tool-description="These smooth stones can be selected by a therapist for gentle, hands-on massage techniques." aria-label="Learn about the smooth stones" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Massage oil" data-tool-description="Massage oil helps hands glide comfortably over the skin during a treatment." aria-label="Learn about massage oil" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Facial roller" data-tool-description="A smooth stone roller can be used with light pressure as part of a facial massage ritual." aria-label="Learn about the facial roller" aria-controls="tools-detail" aria-expanded="false"></button>
+            <button class="tools__hotspot" type="button" data-tool-title="Wooden massage spoon" data-tool-description="The curved wooden surface offers a different shape for a therapist's controlled massage strokes." aria-label="Learn about the wooden massage spoon" aria-controls="tools-detail" aria-expanded="false"></button>
+          </div>
+          <aside class="tools__panel" id="tools-detail" aria-label="Massage tool details" aria-live="polite" aria-atomic="true" aria-hidden="true">
+            <p class="tools__panel-eyebrow">Tool spotlight</p>
+            <h3 class="tools__panel-title">Explore the tools</h3>
+            <p class="tools__panel-description">Explore a marker to learn how each tool is used.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="our-work" id="our-work" aria-labelledby="our-work-title">
+        <div class="our-work__panel">
+          <div class="our-work__heading">
+            <p class="team__eyebrow">A closer look</p>
+            <h2 id="our-work-title">Care, in motion.</h2>
+            <p>Explore a few quiet moments from the treatment room.</p>
+          </div>
+          <div class="work-carousel" aria-roledescription="carousel" aria-label="Massage treatment videos">
+            <div class="work-carousel__frame" id="work-carousel-frame">
+              <video class="work-carousel__video is-active" muted playsinline preload="metadata" aria-label="Calf and foot massage video">
+                <source src="assets/imgs/videos/Satisfying Calf and Foot Massage ASMR %23shorts.mp4" type="video/mp4">
+              </video>
+              <video class="work-carousel__video" muted playsinline preload="metadata" aria-label="Neck and shoulder massage video" hidden>
+                <source src="assets/imgs/videos/neck and shoulder.mp4" type="video/mp4">
+              </video>
+              <video class="work-carousel__video" muted playsinline preload="metadata" aria-label="Back massage video" hidden>
+                <source src="assets/imgs/videos/back.mp4" type="video/mp4">
+              </video>
+              <div class="work-carousel__overlay">
+                <div class="work-carousel__caption" aria-live="polite" aria-atomic="true">
+                  <h3 id="work-slide-title">A moment to unwind</h3>
+                  <p id="work-slide-caption">Calf and foot massage</p>
+                </div>
+                <progress class="work-carousel__progress" id="work-progress" max="100" value="0" aria-label="Video playback progress"></progress>
+              </div>
+              <div class="work-carousel__buttons" aria-label="Video navigation">
+                <button class="work-carousel__button" type="button" data-work-direction="-1" aria-label="Previous video">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button class="work-carousel__button" type="button" data-work-direction="1" aria-label="Next video">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              </div>
+            </div>
+            <div class="work-carousel__controls">
+              <p class="work-carousel__hint">Swipe to explore</p>
+            </div>
+            <p class="work-carousel__status" id="work-playback-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking" id="contact" aria-labelledby="booking-title">
+        <div class="booking__details">
+          <p class="booking__eyebrow">Your visit</p>
+          <h2 id="booking-title">The full<br>appointment is yours.</h2>
+          <p class="booking__intro">Choose a treatment to explore its estimated price.</p>
+          <ul class="booking__services" aria-label="Choose a treatment">
+            <li>
+              <button class="booking__service is-selected" type="button" data-price="1200" data-duration="90 min" aria-pressed="true">
+                <span class="booking__service-details"><strong>One-on-one body care</strong><small>Full package · 90 min</small></span>
+                <span class="booking__service-price">P1,200</span>
+              </button>
+            </li>
+            <li>
+              <button class="booking__service" type="button" data-price="950" data-duration="75 min" aria-pressed="false">
+                <span class="booking__service-details"><strong>Hot stone massage</strong><small>Full body · 75 min</small></span>
+                <span class="booking__service-price">P950</span>
+              </button>
+            </li>
+            <li>
+              <button class="booking__service" type="button" data-price="800" data-duration="60 min" aria-pressed="false">
+                <span class="booking__service-details"><strong>Relaxation massage</strong><small>Full body · 60 min</small></span>
+                <span class="booking__service-price">P800</span>
+              </button>
+            </li>
+            <li>
+              <button class="booking__service" type="button" data-price="600" data-duration="45 min" aria-pressed="false">
+                <span class="booking__service-details"><strong>Back &amp; shoulder massage</strong><small>Focused care · 45 min</small></span>
+                <span class="booking__service-price">P600</span>
+              </button>
+            </li>
+            <li>
+              <button class="booking__service" type="button" data-price="450" data-duration="30 min" aria-pressed="false">
+                <span class="booking__service-details"><strong>Neck &amp; shoulder massage</strong><small>Focused care · 30 min</small></span>
+                <span class="booking__service-price">P450</span>
+              </button>
+            </li>
+            <li>
+              <button class="booking__service" type="button" data-price="400" data-duration="30 min" aria-pressed="false">
+                <span class="booking__service-details"><strong>Foot &amp; calf massage</strong><small>Focused care · 30 min</small></span>
+                <span class="booking__service-price">P400</span>
+              </button>
+            </li>
+          </ul>
+          <p class="booking__fine-print">Illustrative Botswana pula estimates only. Confirm actual services, durations, and prices before publishing.</p>
+        </div>
+        <div class="booking__offer">
+          <div class="booking__price-ring" id="booking-price-ring" role="status" aria-live="polite" aria-atomic="true" style="--price-progress: 360deg">
+            <span class="booking__price-value"><span class="booking__currency">P</span><span class="booking__amount" id="booking-price">1,200</span></span>
+            <span class="booking__price-caption" id="booking-price-caption">Estimated · 90 min</span>
+          </div>
+          <button class="booking__button" type="button" disabled>Online booking coming soon</button>
+          <p class="booking__placeholder">Connect a booking destination to enable appointments.</p>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about__feature">
+          <div class="about__topline">
+            <span>Serenity Spa</span>
+            <span>A more considered kind of care</span>
+          </div>
+          <div class="about__story">
+            <div>
+              <div class="about__rating" aria-label="Sample rating, not verified: 4.9 out of 5">
+                <div class="about__rating-score">
+                  <span>4.9</span>
+                  <span class="about__stars" aria-hidden="true">★★★★★</span>
+                </div>
+                <p><strong>Sample guest rating</strong><span>Replace with verified reviews before publishing</span></p>
+              </div>
+              <p class="about__eyebrow">A place to pause</p>
+              <h2 id="about-title">Come as you are.<br>Leave a little lighter.</h2>
+              <p>Thoughtful, one-on-one body care in a private room. Every visit is an invitation to slow down and make space for yourself.</p>
+            </div>
+            <a class="about__link" href="#team">Meet the team <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="team" id="team" aria-labelledby="team-title">
+        <div class="team__heading">
+          <p class="team__eyebrow">The people behind the care</p>
+          <h2 id="team-title">Our team</h2>
+        </div>
+        <div class="team__grid">
+          <article class="team-card">
+            <img src="assets/imgs/team/365424957277574079.jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Amara Ndlovu</strong>
+              <span>Massage Therapist</span>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="assets/imgs/team/5 of the Most Popular Black Hairstyles on Pinterest.jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Keitumetse Molefe</strong>
+              <span>Spa Therapist</span>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="assets/imgs/team/993536367804302028.jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Naledi Dube</strong>
+              <span>Wellness Practitioner</span>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="assets/imgs/team/Cozy moods and soft tones__@malvinphotography….jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Mpho Kgosidintsi</strong>
+              <span>Guest Care Coordinator</span>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="assets/imgs/team/Get your headshots! It's the second half of the….jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Thato Motsumi</strong>
+              <span>Massage Therapist</span>
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="assets/imgs/team/Portraits of @ayomi_banji __Happy birthday sir 🎉….jpg" alt="Serenity Spa team portrait" loading="lazy">
+            <div class="team-card__info">
+              <strong>Kabelo Sebego</strong>
+              <span>Spa Therapist</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main">
+        <div class="site-footer__brand">
+          <a class="brand" href="#home">Serenity Spa</a>
+          <p>Thoughtful care. A quieter moment for you.</p>
+        </div>
+        <div class="site-footer__column">
+          <h2>Explore</h2>
+          <a href="#benefits">Benefits</a>
+          <a href="#tools">Our tools</a>
+          <a href="#our-work">Our work</a>
+          <a href="#team">Our team</a>
+        </div>
+        <div class="site-footer__column">
+          <h2>Visit</h2>
+          <a href="#contact">Book an appointment</a>
+          <span>Location details coming soon</span>
+        </div>
+        <div class="site-footer__column">
+          <h2>Contact</h2>
+          <span>Contact information coming soon</span>
+          <span>Business hours coming soon</span>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span id="footer-year">2026</span> Serenity Spa</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
